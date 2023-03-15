@@ -1,9 +1,10 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
   <main>
-    <TheWelcome />
+    <Topbar/>
   </main>
 </template>
+
+<script setup>
+import Topbar from '../components/Topbar.vue';
+
+</script>

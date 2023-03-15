@@ -1,6 +1,95 @@
+@import './variables.scss';
 
-@import './colors.scss';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 
 body{
   background-color: $black;
+  font-family: $font-family;
 }
+
+h1 ,h2, h3{
+font-weight: $font-weight;
+}
+
+h1{
+  font-size: $h1-font-size;
+}
+
+h2{
+  font-size: $h2-font-size;
+}
+
+h3{
+  font-size: $h3-font-size;
+}
+
+p{
+  font-weight: $body-font-weight;
+  font-size: $p-font-size;
+  color: $white;
+}
+
+b{
+  font-weight: $bold-font-weight;
+}
+
+.container{
+  max-width: 90%;
+  margin: auto;
+}
+
+header{
+  padding: 2rem 0 ;
+  border-bottom: 1px solid #EBEBEB;
+
+  .header{
+    display: flex;
+    align-items: center;
+
+    .controls{
+     flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    }
+  }
+}
+
+.nav-links a{
+  all: unset;
+  font-style: light;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  align-items: center;
+  color: $white;
+
+  text-decoration: none;
+  margin: 0 2rem;
+}
+
+.btn{
+  padding: 1rem 2rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  align-items: center;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
