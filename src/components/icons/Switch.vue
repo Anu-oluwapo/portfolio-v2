@@ -1,13 +1,14 @@
 <template>
-  <div class="switch-icon">
-    <div @click="active='sun'" :class="[active==='sun'&&'active']" class="sun"><img src="@/assets/sun.svg"/></div>
-    <div @click="active='moon'" :class="[active==='moon'&&'active']" class="moon"><img src="@/assets/moon.svg"/></div>
+  <div @click="active=!active" class="switch-icon">
+    <div class="sun"><img src="@/assets/sun.svg"/></div>
+    <div class="moon"><img src="@/assets/moon.svg"/></div>
+    <div class="ball" :class="[active&&'active']"></div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-let active = ref('moon')
+let active = ref(true)
 </script>
 
 
@@ -32,12 +33,18 @@ let active = ref('moon')
             justify-content: center;
         }
     }
-    .active{
-        background: $white;
-        border-radius: 100px;
-        align-items: center;
-        cursor: default;
-        
+
+    .ball{
+      background: $white;
+      border-radius: 100px;
+      align-items: center;
+      cursor: default;
+      transition: all 0.3s ease;
+      position: absolute;
+      z-index: -1;
+    }
+    .active{ 
+      transform: translateX(40px);
     }
 }
 
