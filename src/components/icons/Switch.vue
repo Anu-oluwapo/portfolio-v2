@@ -1,12 +1,13 @@
 <template>
   <div class="switch-icon">
-    <div class="sun"><img src="@/assets/sun.svg"/></div>
-    <div class="moon active"><img src="@/assets/moon.svg"/></div>
+    <div @click="active='sun'" :class="[active==='sun'&&'active']" class="sun"><img src="@/assets/sun.svg"/></div>
+    <div @click="active='moon'" :class="[active==='moon'&&'active']" class="moon"><img src="@/assets/moon.svg"/></div>
   </div>
 </template>
 
 <script setup>
-
+import { ref } from 'vue';
+let active = ref('moon')
 </script>
 
 
@@ -14,7 +15,7 @@
 @import '@/assets/variables.scss';
 
 .switch-icon{
-    border: 1px solid $neutral;
+    border: 1.5px solid $neutral;
     border-radius: 100px;
     display: flex;
 
@@ -23,8 +24,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 3.5rem;
-        width: 3.5rem;
+        height: 3rem;
+        width: 3rem;
         cursor: pointer;
         
         img{
