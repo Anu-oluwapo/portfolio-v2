@@ -25,10 +25,16 @@ font-weight: $font-weight;
 
 h1{
   font-size: $h1-font-size;
+  
 }
 
 h2{
   font-size: $h2-font-size;
+  color: $neutral;
+  line-height: 8.8rem;
+  span{
+    color: $white;
+  }
 }
 
 h3{
@@ -48,6 +54,10 @@ b{
 .container{
   max-width: 90%;
   margin: auto;
+}
+
+.d-flex{
+  display: flex;
 }
 
 header{
@@ -134,12 +144,86 @@ header{
     }
 
 }
-
-  
 }
 
 .btn_download{
   &::after{
     content: "DOWNLOAD RESUME";
+  }
+}
+
+.hero-section {
+  .container{
+    // height: 70vh;
+    align-items: end;
+    
+  }
+
+  padding: 15rem 0;
+  border-bottom: 1px solid $neutral2;
+  
+  .text-content{
+    flex-grow: 6;
+  }
+  .images{
+    margin: 0rem 0rem;
+    align-items: end;
+    justify-content: start;
+    display: flex;
+    img{
+      width: 25rem;
+      margin: 2rem 3rem;
+    }
+  }
+  
+  .t1{
+    display: flex;
+    h2{
+      display: inline-block;
+    }
+  }
+}
+
+.scroller{
+  flex-grow: 8;
+  position: relative;
+  .bg{
+    position: absolute;
+    background-color: $white;
+    padding: 2.5rem;
+    border-radius: 50%;
+    bottom: 0;
+  }
+  .circle{
+    position: relative;
+    height: 24rem;
+    width: 24rem;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+    .roundText{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      color: $black;
+      animation: rotateText 10s linear infinite;
+
+      @keyframes rotateText {
+        0%{
+          transform: rotate(-360deg);
+        }
+      }
+
+      p{
+        color: $black;
+      }
+      span{
+        position: absolute;
+        left: 50%;
+        transform-origin: 0 12rem;
+      }
+    }
   }
 }
