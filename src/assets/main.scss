@@ -232,20 +232,17 @@ header{
   padding: 5rem 0;
   border-bottom: 1px solid $neutral2;
   display: flex;
+  width: 100%;
 
-  div{
+  .content{
     display: flex;
     align-items: center;
-    justify-content: center;
-    animation: moveText 5s linear infinite;
+    justify-content: space-around;
+    // animation: marquee 5s linear infinite;
 
-    @keyframes moveText {
-      0%{
-        transform: translateX(-100%)
-      }
-      100%{
-        transform: translateX(100%)
-      }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
   }
 
