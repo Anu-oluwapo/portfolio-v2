@@ -233,16 +233,28 @@ header{
   border-bottom: 1px solid $neutral2;
   display: flex;
   width: 100%;
+  overflow: hidden;
 
   .content{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    // animation: marquee 5s linear infinite;
+    animation: marqueeRight 5s linear infinite;
 
-    @keyframes marquee {
+    @keyframes marqueeRight {
+      from { transform: translateX(-50%); }
+      to { transform: translateX(0); }
+    }
+
+    @keyframes marqueeLeft {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
+    }
+
+    div{
+      display: flex;
+      align-items: center;
+      margin: 0 2rem;
     }
   }
 

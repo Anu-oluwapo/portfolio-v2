@@ -5,7 +5,7 @@
                 <div class="t1">
                   <h2><span>FRONT-END<br> DEVELOPER</span></h2>
                   <div class="images">
-                    <img :src="images[image]"/>
+                    <img :src="`/assets/images/${images[image]}`"/>
                   </div>
                 </div>
                 <h2>PASSIONATE ABOUT<br> CRAFTING<span> SUPERB</span><br> WEB EXPERIENCES</h2>
@@ -27,7 +27,7 @@
   import gsap from 'gsap'
 
   const image = ref(0);
-  const images = ref(['/src/assets/images/classroom.png', '/src/assets/images/zenpad.png', '/src/assets/images/tranzaqt.png', '/src/assets/images/portfolio.png'])
+  const images = ref(['classroom.png', 'zenpad.png', 'tranzaqt.png', 'portfolio.png'])
   
 
   function timer(){
