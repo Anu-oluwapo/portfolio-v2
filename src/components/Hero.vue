@@ -5,7 +5,7 @@
                 <div class="t1">
                   <h2><span>FRONT-END<br> DEVELOPER</span></h2>
                   <div class="images">
-                    <img :src="`/assets/images/${images[image]}`"/>
+                    <img :src="`/public/images/${images[image]}`"/>
                   </div>
                 </div>
                 <h2>PASSIONATE ABOUT<br> CRAFTING<span> SUPERB</span><br> WEB EXPERIENCES</h2>
