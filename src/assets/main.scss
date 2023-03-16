@@ -227,3 +227,38 @@ header{
     }
   }
 }
+
+.section-header{
+  padding: 5rem 0;
+  border-bottom: 1px solid $neutral2;
+  display: flex;
+
+  div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: moveText 5s linear infinite;
+
+    @keyframes moveText {
+      0%{
+        transform: translateX(-100%)
+      }
+      100%{
+        transform: translateX(100%)
+      }
+    }
+  }
+
+  h1{
+    display: inline;
+    color: $white;
+
+    span{
+      color: #242424;
+    }
+  }
+
+  .arrow{
+    margin: 0 3rem;
+  }
+}
