@@ -39,6 +39,8 @@ h2{
 
 h3{
   font-size: $h3-font-size;
+  color: $neutral;
+  line-height: 6.8rem;
 }
 
 p{
@@ -338,4 +340,189 @@ header{
   .section-header .content{
     animation: marqueeLeft 5s linear infinite;
   }
+
+  .projects{
+    .project{
+      border-bottom: 1px solid $neutral2;
+      position: relative;
+      &:hover{
+        .dot{
+          transform: translate(0, 0);
+          background-color: $white;
+        } 
+
+        h3{
+          transform: translate(0, 0);
+          color: $white;
+        }
+
+        .skills{
+          span{
+          transform: translate(0, 0);
+          margin: 2.5rem 1rem;
+        }
+      }
+
+      .image{
+        height: 200%;
+        z-index: 1;
+        img{
+          transform: scale(150%);
+        }
+      }
+      }
+      .container{
+        padding: 5rem 0 0 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dot{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $neutral;
+        display: inline-block;
+        margin-right: 2rem;
+        transform: translate(-2rem, 0%);
+        transition: all .5s ease;
+        
+      }
+
+      h3{
+        display: inline;
+        transform: translate(-2rem, 0%);
+        transition: all .5s ease;
+      }
+
+      .skills{
+        padding: 0 5%;
+        display: block;
+        margin-left: 3rem;
+        overflow: hidden;
+        span{
+          color: $white;
+          border: 1px solid $white;
+          border-radius: 15px;
+          padding: 1rem 2rem;
+          display: inline-block;
+          margin: .5rem 1rem;
+          transform: translate(0, 125%);
+          transition: all .5s ease;
+          transition-delay: calc(0.050s * var(--i));
+        }
+      }
+
+      .image{
+        width: 40%;
+        height: 0%;
+        background-color: $white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        // background-image: url('images/zenpad.png');
+        // background-size: contain;
+        transition: all .2s ease-in-out;
+        overflow: hidden;
+
+        img{
+          width: 100%;
+          transform: scale(200%);
+          transform-origin: top left;
+          transition: all .3s ease-in-out;
+          margin-left: -20%;
+          // display: none;
+        }
+      }
+    }
+  }
+}
+
+.skills-section{
+  border-bottom: 1px solid $neutral2;
+  .section-header .content{
+    animation: marqueeRight 5s linear infinite;
+  }
+
+  .skills{
+    padding: 5rem 0;
+    div{
+      margin: 5rem 0;
+    }
+  }
+
+  h2{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    overflow: hidden;
+
+    span{
+      color: $neutral;
+      width: 100%;
+
+      &:hover{
+        color: $white;
+      }
+    }
+    
+  }
+}
+
+.contact-section{
+  border-bottom: 1px solid $neutral2;
+  .section-header .content{
+    animation: marqueeLeft 5s linear infinite;
+  }
+
+  .section{
+    border-bottom: 1px solid $neutral2;
+    padding-bottom: 10rem;
+  }
+
+  .socials{
+    margin: 5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    li{
+      margin: 4rem 5rem;
+      list-style-type: none;
+      
+      
+      a{
+        font-size: $p-font-size;
+        color: $white;
+        padding: 2rem 0;
+      }
+    }
+  }
+
+  .footer{
+    display: flex;
+    width: 100%;
+    
+    .email{
+      a{
+        font-size: $h2-font-size;
+        color: $white;
+      }
+      
+    }
+
+    .credits{
+      display: flex;
+      width: 100%;
+      justify-content: end;
+      align-items: end;
+
+      p{
+        color: $neutral2;
+      }
+    }
+  }
+
+  
 }
