@@ -17,6 +17,12 @@ html{
 body{
   background-color: $black;
   font-family: $font-family;
+  transition: all .3s ease;
+}
+
+.light{
+  background-color: $bg-light;
+  
 }
 
 h1 ,h2, h3{
@@ -93,16 +99,20 @@ header{
   line-height: 2rem;
   align-items: center;
   color: $white;
-
+  cursor: pointer;
   text-decoration: none;
   margin: 0 2rem;
+
+  &:hover{
+    transform: scale(150%);
+  }
 }
 
 .btn{
-  padding: 1rem 2rem;
+  padding: 1rem 10rem;
   font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
+  font-weight: 600;
+  font-size: 1.5rem;
   line-height: 2rem;
   align-items: center;
   border: none;
@@ -112,6 +122,8 @@ header{
   position: relative;
   width: 18rem;
   height: 3.5rem;
+  border: 1px solid $white;
+  overflow: hidden;
   
   span{
     position: absolute;
@@ -360,14 +372,15 @@ header{
           span{
           transform: translate(0, 0);
           margin: 2.5rem 1rem;
+          font-size: 1.3rem;
         }
       }
 
       .image{
-        height: 200%;
+        height: 179%;
         z-index: 1;
         img{
-          transform: scale(150%);
+          transform: scale(120%);
         }
       }
       }
@@ -405,7 +418,7 @@ header{
         span{
           color: $white;
           border: 1px solid $white;
-          border-radius: 15px;
+          border-radius: 2rem;
           padding: 1rem 2rem;
           display: inline-block;
           margin: .5rem 1rem;
@@ -429,10 +442,10 @@ header{
 
         img{
           width: 100%;
-          transform: scale(200%);
-          transform-origin: top left;
+          transform: scale(170%);
+          // transform-origin: top left;
           transition: all .3s ease-in-out;
-          margin-left: -20%;
+          // margin-left: -20%;
           // display: none;
         }
       }
@@ -490,12 +503,30 @@ header{
     li{
       margin: 4rem 5rem;
       list-style-type: none;
+      transition: all .3s ease;
       
       
       a{
         font-size: $p-font-size;
         color: $white;
         padding: 2rem 0;
+        text-decoration: none;
+      }
+
+      svg{
+        margin: 0 .9rem;
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: all .3s ease;
+      }
+
+      &:hover{
+        transform: scale(105%);
+        svg{
+          margin: 0 .9rem;
+          opacity: 1;
+          transform: translateX(0%);
+        }
       }
     }
   }
@@ -503,13 +534,70 @@ header{
   .footer{
     display: flex;
     width: 100%;
-    
-    .email{
-      a{
-        font-size: $h2-font-size;
-        color: $white;
+    position: relative;
+
+    .email-container{
+      .copy-text{
+        background-color: $white;
+        position: absolute;
+        padding: 1rem 2rem;
+        border-radius: 4rem; 
+        margin-left: 45rem;  
+        margin-top: 2.5rem; 
+        transform: translateX(-20%);
+        opacity: 0; 
+        transition: all .3s ease;
+  
+        p{
+          color: black;
+        }
+      }
+
+      &:hover{
+        .copy-text{
+          transform: translateX(0%);
+          opacity: 1; 
+        }
       }
       
+      .email{
+        h2{
+          color: $white;
+          cursor: pointer; 
+          position: relative;
+          
+
+          &:nth-child(1)::after{
+            left: 0;
+          }
+          
+          &::after{
+            height: 5px;
+            background-color: $white;
+            content: ' ';
+            position: absolute;
+            bottom: -4px; 
+            right: 0;
+            width: 0%;
+            transition: all .3s ease;
+            // background: green;
+          }
+        }
+        &:hover{
+          transform: skewX(-10deg);
+
+          h2{
+            &:nth-child(1)::after{
+              width: 56%;
+            }
+
+            &::after{
+              width: 100%;
+            }
+          }
+        }
+        transition: all .3s ease;
+      }
     }
 
     .credits{
@@ -520,6 +608,10 @@ header{
 
       p{
         color: $neutral2;
+      }
+
+      a{
+        color: $white;
       }
     }
   }

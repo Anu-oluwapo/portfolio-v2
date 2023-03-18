@@ -1,5 +1,5 @@
 <template>
-    <section class="work-section">
+    <section class="work-section" id="work">
         <SectionHeader :text="'WORK'"/>            
           <div class="">
            <div class="projects">
@@ -37,7 +37,7 @@
                     <span style="--i: 3">VUE JS</span>
                     <span style="--i: 4">GSAP</span>
                 </div>
-                <div style="background-color: #0D0D0D;" class="image"><img src="/images/portfolio.png"/></div>
+                <div style="background-color: #0D0D0D;" class="image"><a target="_blank" href="https://anuoluwapo.netlify.app"><img src="/images/portfolio.png"/></a></div>
             </div>
             <div class="project">
                 <div class="container">
