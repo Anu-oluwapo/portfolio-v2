@@ -17,4 +17,5 @@ import Skills from '../components/Skills.vue';
 import Topbar from '../components/Topbar.vue';
 import Work from '../components/Work.vue';
 
+
 </script>
