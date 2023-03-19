@@ -4,7 +4,7 @@
     <div class="container">
       <div class="image">
         <div class="image-border"></div>
-        <img src="/images/person.png" />
+        <img alt="Man Looking Up" src="/images/person.png" />
       </div>
 
       <div class="text">

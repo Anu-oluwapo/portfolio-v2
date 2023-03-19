@@ -10,7 +10,7 @@
             >
           </h2>
           <div class="images">
-            <img :src="`/images/${images[image]}`" />
+            <img :alt="images[image]" :src="`/images/${images[image]}`" />
           </div>
         </div>
         <h2>
@@ -22,7 +22,11 @@
       <div class="scroller">
         <div class="bg">
           <div class="circle">
-            <img class="arrowDown" src="@/assets/arrowDown.svg" />
+            <img
+              alt="arrow down"
+              class="arrowDown"
+              src="@/assets/arrowDown.svg"
+            />
             <div class="roundText" id="text">
               <p>SCROLL DOWN FOR MORE . SCROLL DOWN FOR MORE .</p>
             </div>

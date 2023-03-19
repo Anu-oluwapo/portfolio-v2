@@ -16,8 +16,12 @@
             </div>
           </div>
           <div style="background-color: #111119" class="image">
-            <a target="_blank" href="https://zenpad.netlify.app">
-              <img src="/images/zenpad.png" />
+            <a
+              name="project-zenpad"
+              target="_blank"
+              href="https://zenpad.netlify.app"
+            >
+              <img alt="Project Zenpad" src="/images/zenpad.png" />
             </a>
             <div class="cursor"><p>View Site</p></div>
           </div>
@@ -36,8 +40,11 @@
             </div>
           </div>
           <div class="image">
-            <a target="_blank" href="https://vr-classroom.netlify.app"
-              ><img src="/images/classroom.png" />
+            <a
+              name="project-vrClassroom"
+              target="_blank"
+              href="https://vr-classroom.netlify.app"
+              ><img alt="Project VR Classroom" src="/images/classroom.png" />
             </a>
           </div>
         </div>
@@ -56,8 +63,11 @@
             </div>
           </div>
           <div style="background-color: #0d0d0d" class="image">
-            <a target="_blank" href="https://anuoluwapo.netlify.app"
-              ><img src="/images/portfolio.png"
+            <a
+              name="project-portfolio"
+              target="_blank"
+              href="https://anuoluwapo.netlify.app"
+              ><img alt="Project Portfolio" src="/images/portfolio.png"
             /></a>
           </div>
         </div>
@@ -74,8 +84,12 @@
             </div>
           </div>
           <div style="background-color: #0d0d0d" class="image">
-            <a target="_blank" href="https://sabali-health.netlify.app">
-              <img src="/images/person.png" />
+            <a
+              name="project-sabali"
+              target="_blank"
+              href="https://sabali-health.netlify.app"
+            >
+              <img alt="Project Sabali Health" src="/images/person.png" />
             </a>
           </div>
         </div>
@@ -92,8 +106,11 @@
             </div>
           </div>
           <div class="image">
-            <a target="_blank" href="https://tranzaqt.netlify.app"
-              ><img src="/images/tranzaqt.png" />
+            <a
+              name="project-tranzaqt"
+              target="_blank"
+              href="https://tranzaqt.netlify.app"
+              ><img alt="Project Tranzaqt" src="/images/tranzaqt.png" />
             </a>
           </div>
         </div>
