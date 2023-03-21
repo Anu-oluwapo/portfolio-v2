@@ -62,7 +62,7 @@
               <span style="--i: 5">LENIS</span>
             </div>
           </div>
-          <div style="background-color: #0d0d0d" class="image">
+          <div style="background-color: #131313" class="image">
             <a
               name="project-portfolio"
               target="_blank"
@@ -83,13 +83,13 @@
               <span style="--i: 2">JAVASCRIPT</span>
             </div>
           </div>
-          <div style="background-color: #0d0d0d" class="image">
+          <div style="background-color: white" class="image">
             <a
               name="project-sabali"
               target="_blank"
-              href="https://sabali-health.netlify.app"
+              href="https://sabalihealth.netlify.app"
             >
-              <img alt="Project Sabali Health" src="/images/person.png" />
+              <img alt="Project Sabali Health" src="/images/sabali.png" />
             </a>
           </div>
         </div>

@@ -9,14 +9,17 @@
 
       <div class="text">
         <p>
-          My name is Anuoluwapo Abolarin and i am a detail-oriented
-          <b>front end developer</b>. I create captivating designs and curate
-          interactive web experiences for amazing people using technologies such
-          as HTML, CSS and Javascript / Typescript coupled with frameworks such
-          as Bootstrap CSS, VueJS, NuxtJS, Vite, VueX, Pinia, etc. I'm also
-          familiar with WordPress, Adobe xd and Figma as well which I use to
-          create some of my designs. When i'm not working, i love to play games,
-          edit videos, play some basketball and occasionally watch movies.
+          Hi there! I am Anuoluwapo, a passionate and detail-oriented Frontend
+          Engineer, dedicated to crafting seamless and engaging websites / web
+          applications using the latest technologies. With a keen eye for design
+          and user experience, I love creating digital experiences that are both
+          aesthetically pleasing and highly functional. When I'm not coding, you
+          can usually find me playing games, hitting the gym for a workout,
+          shooting hoops on the basketball court, or kicking back and enjoying a
+          good movie. I am constantly seeking new challenges and opportunities
+          to learn and grow as a developer, and am excited to be a part of the
+          dynamic and ever-evolving tech industry. Thanks for stopping by, and I
+          look forward to connecting with you soon!
         </p>
 
         <a href="#" @click="lenis.scrollTo('#contact')"

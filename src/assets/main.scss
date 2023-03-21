@@ -17,6 +17,13 @@ html,body {
 html{
   font-size: 62.5%;
   overflow-x: hidden;
+
+  @media (max-width: $large) {
+    font-size: 60%;
+  }
+  @media (max-width: $medium) {
+    font-size: 50%;
+  }
 }
 
 body{
@@ -40,6 +47,10 @@ font-weight: $font-weight;
 
 h1{
   font-size: $h1-font-size;
+
+  @media (min-width: $large) {
+    font-size: 10rem;
+  }
   
 }
 
@@ -47,6 +58,13 @@ h2{
   font-size: $h2-font-size;
   color: $neutral;
   line-height: 8.8rem;
+
+  @media (max-width: 700px) {
+            font-size: 6rem;
+          }
+          // @media (max-width: 500px) {
+          //   font-size: 4rem;
+          // }
   span{
     color: $white;
   }
@@ -96,6 +114,12 @@ header{
     display: flex;
     justify-content: end;
     align-items: center;
+
+     @media (max-width: $small) {
+    display: none;
+  }
+
+    
     }
   }
 }
@@ -203,15 +227,29 @@ header{
     img{
       width: 25rem;
       margin: 2rem 3rem;
+
+      @media (max-width: 700px) {
+      margin: 2rem 0rem;
+    }
     }
   }
   
   .t1{
     display: flex;
+    @media (max-width: 700px) {
+      flex-direction: column-reverse;
+    }
     h2{
       display: inline-block;
     }
   }
+}
+
+br{
+  @media (max-width: 700px) {
+    display: none;
+  }
+
 }
 
 .scroller{
@@ -219,12 +257,20 @@ header{
   display: flex;
   justify-content: end;
   position: relative;
+
+  @media (max-width: 890px) {
+    display: none;
+  }
   .bg{
     // position: absolute;
     background-color: $white;
     padding: 2.5rem;
     border-radius: 50%;
     bottom: 0;
+
+    @media (max-width: $medium) {
+    padding: 2rem;
+  }
   }
   .circle{
     position: relative;
@@ -234,6 +280,10 @@ header{
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    @media (max-width: $medium) {
+    height: 20rem;
+    width: 20rem;
+  }
 
     .roundText{
       width: 100%;
@@ -255,6 +305,11 @@ header{
         position: absolute;
         left: 50%;
         transform-origin: 0 12rem;
+
+        @media (max-width: $medium) {
+        transform-origin: 0 10rem;
+      }
+        
       }
     }
   }
@@ -310,6 +365,10 @@ header{
   .section-header .content{
     animation: marqueeRight 5s linear infinite;
   }
+
+  .image{
+    position: relative;
+  }
   .image-border{
     border: 1px solid $neutral2;
     width: 60.4rem;
@@ -317,11 +376,24 @@ header{
     position: absolute;
     transition: all .3s ease;
     z-index: -1;
+
+    @media (max-width: $small) {
+    margin-left: 0rem;
+    margin-top: 0rem;
+    width: 100%;
+    height: 90%;
+  }
     
   }
 
   img{
     transition: all .3s ease;
+    width: 62rem;
+    @media (max-width: $small) {
+    margin-left: 0rem;
+    margin-top: 0rem;
+    width: 90vw;
+  }
   }
 
   .text{
@@ -329,6 +401,16 @@ header{
     margin-left: 30rem;
     margin-top: -5rem;
     z-index: 2;
+
+    @media (max-width: $small) {
+    margin-left: 0rem;
+    margin-top: 5rem;
+    width: 100%;
+  }
+
+  @media (max-width: $xSmall) {
+    width: 100%;
+  }
     
     P{
       display: inline-block;
@@ -417,8 +499,8 @@ header{
         border-radius: 50%;
         background-color: $neutral;
         display: inline-block;
-        margin-right: 2rem;
-        transform: translate(-2rem, 0%);
+        margin-right: 3rem;
+        transform: translate(-3rem, 0%);
         transition: all .5s ease;
         
       }
@@ -492,6 +574,7 @@ header{
 
   .skills{
     padding: 5rem 0;
+    overflow: hidden;
     div{
       margin: 5rem 0;
     }
@@ -567,6 +650,11 @@ header{
     width: 100%;
     position: relative;
 
+    @media (max-width: 950px) {
+      flex-direction: column-reverse;
+      
+    }
+
     .email-container{
       .copy-text{
         background-color: $white;
@@ -636,6 +724,11 @@ header{
       width: 100%;
       justify-content: end;
       align-items: end;
+
+      @media (max-width: 950px) {
+      margin: 4rem -1rem;
+      
+    }
 
       p{
         color: $neutral2;
