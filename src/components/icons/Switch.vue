@@ -15,12 +15,12 @@ let active = ref(true);
 @import "@/assets/variables.scss";
 
 .switch-icon {
-  border: 1.5px solid $neutral;
-  border-radius: 100px;
+  border: 0.15rem solid $neutral;
+  border-radius: 10rem;
   display: flex;
 
   div {
-    margin: 5px;
+    margin: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,7 @@ let active = ref(true);
 
   .ball {
     background: $white;
-    border-radius: 100px;
+    border-radius: 10rem;
     align-items: center;
     cursor: default;
     transition: all 0.3s ease;
@@ -43,7 +43,7 @@ let active = ref(true);
     z-index: -1;
   }
   .active {
-    transform: translateX(40px);
+    transform: translateX(4rem);
   }
 }
 </style>

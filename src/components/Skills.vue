@@ -4,9 +4,10 @@
     <div class="skills">
       <div class="skillset--1">
         <h2>
-          <span>Javascript</span> . <span>Typescript</span> .
-          <span>VueJS</span> . <span>ReactJS</span> . <span>Javascript</span> .
-          <span>Typescript</span> . <span>VueJS</span> . <span>ReactJS</span>
+          <span>Javascript</span> . <span>ReactJS</span> .
+          <span>Typescript</span> . <span>VueJS</span> .
+          <span>Javascript</span> . <span>ReactJS</span> .
+          <span>Typescript</span> . <span>VueJS</span>
         </h2>
       </div>
       <div class="skillset--2">

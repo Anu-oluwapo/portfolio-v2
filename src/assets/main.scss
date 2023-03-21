@@ -11,6 +11,7 @@
 html,body {
   width: 100%;
   overscroll-behavior: none;
+  overflow-x: hidden;
   min-height: 100%;
 }
 
@@ -51,6 +52,10 @@ h1{
   @media (min-width: $large) {
     font-size: 10rem;
   }
+
+  @media (max-width: $small) {
+      font-size: 6rem;
+    }
   
 }
 
@@ -213,8 +218,19 @@ header{
     
   }
 
+  br{
+  @media (max-width: 700px) {
+    display: none;
+  }
+
+}
+
   padding: 15rem 0;
   border-bottom: 1px solid $neutral2;
+
+  @media (max-width: $small) {
+      padding: 5rem 0rem;
+    }
   
   .text-content{
     flex-grow: 1;
@@ -243,13 +259,6 @@ header{
       display: inline-block;
     }
   }
-}
-
-br{
-  @media (max-width: 700px) {
-    display: none;
-  }
-
 }
 
 .scroller{
@@ -322,6 +331,14 @@ br{
   width: 100%;
   overflow: hidden;
   justify-content: center;
+
+  @media (max-width: $small) {
+    .arrow{
+    width: 5rem;
+  }
+
+  padding: 2.5rem 0;
+  }
 
   .content{
     display: flex;
@@ -414,6 +431,11 @@ br{
     
     P{
       display: inline-block;
+      line-height: 3.5rem;
+
+      b{
+        font-style: italic;
+      }
     }
 
     .btn{
@@ -433,7 +455,9 @@ br{
     justify-content: center;
     width: 100%;
     padding: 15rem 0;
-    // height: 80vh;
+    @media (max-width: $small) {
+    padding: 10rem 0;
+    }
   }
   .container:hover{
     .image-border{
@@ -577,6 +601,10 @@ br{
     overflow: hidden;
     div{
       margin: 5rem 0;
+
+      @media (max-width: $small) {
+        margin: 1rem 0;
+      }
     }
   }
 
@@ -584,6 +612,10 @@ br{
     display: flex;
     justify-content: space-around;
     gap: 10px;
+    @media (max-width: $small) {
+      font-size: 4rem;
+    }
+    
     // overflow: hidden;
 
     span{
@@ -614,11 +646,20 @@ br{
     width: 100%;
     display: flex;
     justify-content: end;
+
+  @media (max-width: $xSmall) {
+    margin: 3rem 0;
+  }
+
+
     li{
       margin: 4rem 5rem;
       list-style-type: none;
       transition: all .3s ease;
-      
+
+      @media (max-width: $xSmall) {
+        margin: 4rem 0;
+      }
       
       a{
         font-size: $p-font-size;
@@ -684,6 +725,10 @@ br{
           color: $white;
           cursor: pointer; 
           position: relative;
+          @media (max-width: $xSmall) {
+            font-size: 4rem;
+            margin-bottom: -3rem;
+          }
           
 
           &:nth-child(1)::after{
