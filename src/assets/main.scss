@@ -39,11 +39,54 @@ body{
 
 .light{
   background-color: $bg-light;
+  p,.nav-links a{
+        color: $black;  
+      }
+
+      .btn{
+        border: 1px solid $black;
+        background-color: $bg-light;
+      }
+
+      header{
+        border-bottom: 1px solid $neutral;
+      }
+
+      .section-header{
+        border-bottom: 1px solid $neutral;
+        border-top: 1px solid $neutral;
+      }
+
+      .about-section{
+        p{
+          filter: invert(30%);
+        }
+      }
+
+      .work-section{
+        .project{
+          border-top: 1px solid $neutral;
+        }
+      }
+
+      .contact-section{
+          footer{
+          .email-container{
+            .email{
+                h2{
+              color: $black !important;
+            }
+          }
+          }
+        
+        }
+      }
   
 }
 
 h1 ,h2, h3{
 font-weight: $font-weight;
+
 }
 
 h1{
@@ -211,6 +254,11 @@ header{
 }
 
 .hero-section {
+  h2{
+    @media (max-width: $small) {
+  font-weight: 600;
+}
+  }
   .container{
     display: flex;
     align-items: end;
@@ -697,6 +745,9 @@ header{
     }
 
     .email-container{
+      @media (max-width: 950px) {
+        
+      }
       .copy-text{
         background-color: $white;
         position: absolute;
@@ -707,6 +758,12 @@ header{
         transform: translateX(-20%);
         opacity: 0; 
         transition: all .3s ease;
+
+        @media (max-width: 950px) {
+        top: 5rem;
+        left: 0;
+        margin-left: 0;
+      }
   
         p{
           color: black;
@@ -728,6 +785,11 @@ header{
           @media (max-width: $xSmall) {
             font-size: 4rem;
             margin-bottom: -3rem;
+
+            &::after{
+              // top: 0rem;
+              top: 6.2rem;
+            }
           }
           
 
@@ -757,6 +819,19 @@ header{
 
             &::after{
               width: 100%;
+
+              @media (max-width: 950px) {
+                width: 75%;
+                right: 25%;
+              }
+              @media (max-width: $small) {
+                width: 90%;
+                right: 10%;
+              }
+              @media (max-width: $xSmall) {
+                width: 100%;
+                right: 0;
+              }
             }
           }
         }
