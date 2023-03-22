@@ -5,6 +5,7 @@
       <div class="image">
         <div class="image-border"></div>
         <img alt="Man Looking Up" src="/images/person.png" />
+        <!-- <img alt="Man Looking Up" src="/images/person2.png" /> -->
       </div>
 
       <div class="text">
@@ -23,9 +24,13 @@
           forward to connecting with you soon!
         </p>
 
-        <a href="#" @click="lenis.scrollTo('#contact')"
-          ><button type="button" class="btn"><span>GET IN TOUCH</span></button>
-        </a>
+        <button
+          @click.prevent="lenis.scrollTo('#contact')"
+          type="button"
+          class="btn"
+        >
+          <span>GET IN TOUCH</span>
+        </button>
       </div>
     </div>
   </section>

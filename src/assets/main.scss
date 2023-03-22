@@ -41,6 +41,80 @@ body {
 .light {
   background-color: $bg-light;
 
+  p,
+  .nav-links a {
+    color: $black;
+  }
+
+  .btn {
+    border: 1px solid $black;
+    background-color: $bg-light;
+  }
+
+  header {
+    border-bottom: 1px solid $neutral;
+  }
+
+  .section-header {
+    border-bottom: 1px solid $neutral;
+    border-top: 1px solid $neutral;
+  }
+
+  .hero-section {
+    h2 {
+      color: #707070;
+      span {
+        color: $black;
+      }
+    }
+  }
+
+  .about-section {
+    p {
+      filter: invert(0.4);
+      color: #131313;
+      mix-blend-mode: difference;
+    }
+
+    .btn {
+      filter: invert(0.3);
+      background: none;
+    }
+
+    .image-border {
+      border: 1px solid $black;
+      filter: invert(0.5);
+    }
+
+    .image {
+      img {
+        filter: saturate(0%);
+        background-color: $bg-light;
+      }
+    }
+  }
+
+  .work-section {
+    .project {
+      border-top: 1px solid $neutral;
+      &:hover {
+        .dot {
+          filter: invert(1);
+        }
+
+        h3 {
+          filter: invert(1);
+        }
+
+        .skills {
+          span {
+            filter: invert(0.7);
+          }
+        }
+      }
+    }
+  }
+
   .contact-section {
     .socials {
       ul {
@@ -67,41 +141,17 @@ body {
         .email {
           h2 {
             color: $black;
+            &::after {
+              background-color: $neutral;
+            }
           }
         }
       }
     }
   }
 
-  p,
-  .nav-links a {
-    color: $black;
-  }
-
-  .btn {
-    border: 1px solid $black;
-    background-color: $bg-light;
-  }
-
-  header {
+  .skills-section {
     border-bottom: 1px solid $neutral;
-  }
-
-  .section-header {
-    border-bottom: 1px solid $neutral;
-    border-top: 1px solid $neutral;
-  }
-
-  .about-section {
-    p {
-      filter: invert(30%);
-    }
-  }
-
-  .work-section {
-    .project {
-      border-top: 1px solid $neutral;
-    }
   }
 }
 
@@ -274,7 +324,7 @@ header {
 .hero-section {
   h2 {
     @media (max-width: $small) {
-      font-weight: 600;
+      // font-weight: 600;
     }
   }
   .container {
@@ -484,7 +534,7 @@ header {
   }
 
   .text {
-    width: 60rem;
+    width: 75rem;
     margin-left: 30rem;
     margin-top: -5rem;
     z-index: 2;
@@ -501,7 +551,8 @@ header {
 
     P {
       display: inline-block;
-      line-height: 3.5rem;
+      line-height: 3rem;
+      text-transform: uppercase;
 
       b {
         font-style: italic;
@@ -568,10 +619,13 @@ header {
         }
 
         .image {
-          height: 36.7rem;
+          height: 36.9rem;
           z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           img {
-            transform: scale(120%);
+            transform: scale(100%);
           }
         }
       }
@@ -647,10 +701,7 @@ header {
         img {
           width: 100%;
           transform: scale(170%);
-          // transform-origin: top left;
           transition: all 0.3s ease-in-out;
-          // margin-left: -20%;
-          // display: none;
         }
       }
     }
