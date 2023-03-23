@@ -234,8 +234,10 @@ header {
       justify-content: end;
       align-items: center;
 
-      @media (max-width: $small) {
-        display: none;
+      .nav-links {
+        @media (max-width: $small) {
+          display: none;
+        }
       }
     }
   }
