@@ -1,7 +1,7 @@
 // @import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
 
 //Fonts
-$font-family: 'Helvetica Neue', sans-serif;
+$font-family: "Helvetica Neue", sans-serif;
 $font-weight: 400;
 $body-font-weight: 300;
 $bold-font-weight: 700;
@@ -13,12 +13,12 @@ $p-font-size: 1.8rem;
 $nav-font-size: 1.4rem;
 
 //Colors
-$black : #131313;;
-$white : #FFFFFF;
-$neutral : #242424; 
-$neutral2 : #ffffff33;
-// $bg-light: #a7a7a7; 
-$bg-light: #D9D9D9; 
+$black: #131313;
+$white: #ffffff;
+$neutral: #242424;
+$neutral2: #ffffff33;
+// $bg-light: #a7a7a7;
+$bg-light: #d9d9d9;
 
 // Layout Breakpoints
 $xLarge: 1920px;
@@ -26,3 +26,4 @@ $large: 1366px;
 $medium: 1110px;
 $small: 800px;
 $xSmall: 500px;
+$xxSmall: 350px;

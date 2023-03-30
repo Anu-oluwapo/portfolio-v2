@@ -26,6 +26,10 @@ html {
   @media (max-width: $medium) {
     font-size: 50%;
   }
+
+  @media (max-width: $xxSmall) {
+    font-size: 35%;
+  }
 }
 
 body {
@@ -318,6 +322,10 @@ header {
 }
 
 .btn_download {
+  @media (max-width: $xSmall) {
+    // display: none;
+    margin: 0 0;
+  }
   &::after {
     content: "DOWNLOAD RESUME";
   }

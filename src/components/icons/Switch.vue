@@ -19,6 +19,10 @@ let active = ref(true);
   border-radius: 10rem;
   display: flex;
 
+  @media (max-width: $small) {
+    display: none;
+  }
+
   div {
     margin: 0.5rem;
     display: flex;

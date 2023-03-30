@@ -29,6 +29,10 @@
         <div @click="toggleLight()" class="switch">
           <Switch />
         </div>
+
+        <div class="hamburger">
+          <Hamburger />
+        </div>
       </div>
     </div>
   </header>
@@ -36,6 +40,7 @@
 
 <script setup>
 import Switch from "./icons/Switch.vue";
+import Hamburger from "./icons/Hamburger.vue";
 import { onMounted } from "vue";
 import { lenis } from "../helpers/animations";
 
