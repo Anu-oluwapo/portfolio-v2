@@ -12,7 +12,7 @@
 
 <script setup>
 import { ref } from "vue";
-let active = ref(true);
+let active = ref(false);
 </script>
 
 <style lang="scss" scoped>
