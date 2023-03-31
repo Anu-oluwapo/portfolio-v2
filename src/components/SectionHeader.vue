@@ -1,36 +1,78 @@
 <template>
-        <div class="section-header" :id="'section-'+text">
-            <div class="content" :id="'content-'+text">
-                <div><h1><span>{{ text }}</span></h1> <Arrow class="arrow" color="#242424" /></div>
-                <div><h1>{{ text }}</h1> <Arrow class="arrow" color="white" /></div>
-                <div><h1><span>{{ text }}</span></h1> <Arrow class="arrow" color="#242424" /></div>
-                <div><h1>{{ text }}</h1> <Arrow class="arrow" color="white" /></div>
-            </div> 
-        </div>
-  </template>
-  
-  <script setup>
-  import Arrow from '../assets/svg/arrow.vue'
-  import { onMounted } from 'vue';
+  <div
+    v-if="orientation == 'vertical'"
+    class="section-header vertical"
+    :id="'section-' + text"
+  >
+    <div class="content" :id="'content-' + text">
+      <div>
+        <h1>
+          <span>{{ text }}</span>
+        </h1>
+        <Arrow class="arrow" color="#242424" />
+      </div>
+      <div>
+        <h1>{{ text }}</h1>
+        <Arrow class="arrow" color="white" />
+      </div>
+      <div>
+        <h1>
+          <span>{{ text }}</span>
+        </h1>
+        <Arrow class="arrow" color="#242424" />
+      </div>
+      <div>
+        <h1>{{ text }}</h1>
+        <Arrow class="arrow" color="white" />
+      </div>
+    </div>
+  </div>
 
-  const props = defineProps({
-    text:String,
-  })
+  <div v-else class="section-header" :id="'section-' + text">
+    <div class="content" :id="'content-' + text">
+      <div>
+        <h1>
+          <span>{{ text }}</span>
+        </h1>
+        <Arrow class="arrow" color="#242424" />
+      </div>
+      <div>
+        <h1>{{ text }}</h1>
+        <Arrow class="arrow" color="white" />
+      </div>
+      <div>
+        <h1>
+          <span>{{ text }}</span>
+        </h1>
+        <Arrow class="arrow" color="#242424" />
+      </div>
+      <div>
+        <h1>{{ text }}</h1>
+        <Arrow class="arrow" color="white" />
+      </div>
+    </div>
+  </div>
+</template>
 
-  onMounted(()=>{
-  const content = document.querySelector('#section-'+props.text)
-  const contentClone = document.querySelector('#content-'+props.text).cloneNode(true)
+<script setup>
+import Arrow from "../assets/svg/arrow.vue";
+import { onMounted } from "vue";
 
-  content.append(contentClone)
+const props = defineProps({
+  text: String,
+  orientation: String,
+});
 
-  })
-  
+onMounted(() => {
+  const content = document.querySelector("#section-" + props.text);
+  const contentClone = document
+    .querySelector("#content-" + props.text)
+    .cloneNode(true);
 
+  content.append(contentClone);
+});
+</script>
 
-  </script>
-  
-  <style lang="scss" scoped>
-  @import '@/assets/variables.scss';
-
-  </style>
-  
+<style lang="scss" scoped>
+@import "@/assets/variables.scss";
+</style>
