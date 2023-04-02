@@ -1,16 +1,16 @@
 <template>
   <section class="preloader-section">
     <SectionHeader :text="'Loading'" />
-    <SectionHeader :orientation="'vertical'" :text="'Loading'" />
+    <!-- <SectionHeader :orientation="'vertical'" :text="'Loading'" /> -->
     <div class="container">
       <div class="loader-container">
         <div class="text">
           <p>Cooking Beans</p>
         </div>
         <div class="loader">
-          <div class=""></div>
+          <div id="loading-bar"></div>
         </div>
-        <span>20%</span>
+        <span id="counter">20%</span>
       </div>
     </div>
   </section>
@@ -23,9 +23,9 @@ import gsap from "gsap";
 
 const image = ref(0);
 const texts = ref([
-  "Cooking Beans",
-  "zenpad.png",
-  "tranzaqt.png",
+  "Generating Nodes",
+  "Touching Up Images",
+  "Sipping Coffee",
   "Finalzing Processes",
 ]);
 
@@ -35,32 +35,80 @@ function timer() {
 }
 
 onMounted(() => {
-  const roundText = document.querySelector(".roundText p");
-  roundText.innerHTML = roundText.innerText
-    .split("")
-    .map(
-      (char, i) => `<span style="transform:rotate(${i * 8}deg)">${char}</span>`
-    )
-    .join("");
+  const loadingTl = gsap.timeline();
+  loadingTl
+    .to("#loading-bar", {
+      width: "20%",
+      duration: 5,
+    })
+    .to("#loading-bar", {
+      width: "60%",
+      duration: 3,
+      delay: 0.8,
+    })
+    .to("#loading-bar", {
+      width: "90%",
+      duration: 2,
+      delay: 0.5,
+    })
+    .to("#loading-bar", {
+      width: "100%",
+      duration: 1,
+      delay: 0.2,
+    });
 
-  timer();
+  const counterTl = gsap.timeline();
 
-  const arrowTl = gsap.timeline({
-    yoyo: true,
-    repeat: -1,
+  let Cont = { val: 0 };
+
+  counterTl
+    .to(Cont, {
+      val: 20,
+      duration: 5,
+      roundProps: "val",
+      onUpdate: function () {
+        document.getElementById("counter").innerHTML = Cont.val + "%";
+      },
+    })
+    .to(Cont, {
+      val: 60,
+      duration: 3,
+      delay: 0.8,
+      roundProps: "val",
+      onUpdate: function () {
+        document.getElementById("counter").innerHTML = Cont.val + "%";
+      },
+    })
+    .to(Cont, {
+      val: 90,
+      duration: 2,
+      delay: 0.5,
+      roundProps: "val",
+      onUpdate: function () {
+        document.getElementById("counter").innerHTML = Cont.val + "%";
+      },
+    })
+    .to(Cont, {
+      val: 100,
+      duration: 1,
+      delay: 0.2,
+      roundProps: "val",
+      onUpdate: function () {
+        document.getElementById("counter").innerHTML = Cont.val + "%";
+      },
+    });
+
+  gsap.to(".preloader-section", {
+    y: "-100%",
+    delay: 12.5,
   });
-
-  arrowTl.fromTo(
-    ".arrowDown",
-    { y: -10 },
-    { y: 10, duration: 1, yoyoEase: true }
-  );
 });
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/main.scss";
 section {
-  background: black;
+  background: $black;
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -92,11 +140,11 @@ section {
     margin: 1rem 0;
     bottom: 0;
     div {
-      width: 20%;
+      width: 0%;
       background: white;
       height: 0.6rem;
       border-radius: 10px;
-      transition: all 0.5s ease;
+      // transition: all 0.5s ease;
     }
   }
 

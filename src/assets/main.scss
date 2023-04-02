@@ -42,6 +42,17 @@ body {
   }
 }
 
+p,
+h1,
+h2,
+h3,
+a,
+span {
+  &::selection {
+    background: green;
+  }
+}
+
 .light {
   background-color: $bg-light;
 
@@ -222,6 +233,12 @@ b {
 
 .d-flex {
   display: flex;
+}
+
+.preloader-section {
+  .section-header .content {
+    animation: marqueeRight 5s linear infinite;
+  }
 }
 
 header {
