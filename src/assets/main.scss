@@ -352,7 +352,7 @@ header {
 .hero-section {
   h2 {
     @media (max-width: $small) {
-      // font-weight: 600;
+      line-height: 6.5rem;
     }
   }
   .container {
