@@ -10,7 +10,7 @@
         <div class="loader">
           <div id="loading-bar"></div>
         </div>
-        <span id="counter">20%</span>
+        <span id="counter">0%</span>
       </div>
     </div>
   </section>
@@ -20,8 +20,8 @@
 import { ref, onMounted } from "vue";
 import SectionHeader from "../components/SectionHeader.vue";
 import gsap from "gsap";
+import imagesLoaded from "imagesloaded";
 
-const image = ref(0);
 const texts = ref([
   "Generating Nodes",
   "Touching Up Images",
@@ -29,79 +29,111 @@ const texts = ref([
   "Finalzing Processes",
 ]);
 
-function timer() {
-  image.value < 3 ? image.value++ : (image.value = 0);
-  setTimeout(() => timer(), 1300);
-}
-
 onMounted(() => {
-  const loadingTl = gsap.timeline();
-  loadingTl
-    .to("#loading-bar", {
-      width: "20%",
-      duration: 5,
-    })
-    .to("#loading-bar", {
-      width: "60%",
-      duration: 3,
-      delay: 0.8,
-    })
-    .to("#loading-bar", {
-      width: "90%",
-      duration: 2,
-      delay: 0.5,
-    })
-    .to("#loading-bar", {
-      width: "100%",
-      duration: 1,
-      delay: 0.2,
-    });
+  let imageLoad = imagesLoaded(document.querySelectorAll("img"));
+  let count = document.querySelector("#counter"),
+    progressBar = document.querySelector("#loading-bar"),
+    images = document.querySelectorAll("img").length,
+    loadedCount = 0,
+    loadingProgress = 0;
 
-  const counterTl = gsap.timeline();
+  var loadingTl = gsap.timeline();
 
-  let Cont = { val: 0 };
-
-  counterTl
-    .to(Cont, {
-      val: 20,
-      duration: 5,
-      roundProps: "val",
-      onUpdate: function () {
-        document.getElementById("counter").innerHTML = Cont.val + "%";
-      },
-    })
-    .to(Cont, {
-      val: 60,
-      duration: 3,
-      delay: 0.8,
-      roundProps: "val",
-      onUpdate: function () {
-        document.getElementById("counter").innerHTML = Cont.val + "%";
-      },
-    })
-    .to(Cont, {
-      val: 90,
-      duration: 2,
-      delay: 0.5,
-      roundProps: "val",
-      onUpdate: function () {
-        document.getElementById("counter").innerHTML = Cont.val + "%";
-      },
-    })
-    .to(Cont, {
-      val: 100,
-      duration: 1,
-      delay: 0.2,
-      roundProps: "val",
-      onUpdate: function () {
-        document.getElementById("counter").innerHTML = Cont.val + "%";
-      },
-    });
-
-  gsap.to(".preloader-section", {
-    y: "-100%",
-    delay: 12.5,
+  imageLoad.on("progress", (instance, image) => {
+    loadProgress();
   });
+
+  function loadProgress(imageLoad, image) {
+    loadedCount++;
+    loadingProgress = loadedCount / images;
+
+    gsap.to(loadingTl, { progress: loadingProgress, duration: 2 });
+  }
+
+  var loadingTl = gsap.timeline({
+    paused: false,
+    onUpdate: countPercent,
+    onComplete: loadComplete,
+  });
+
+  loadingTl.to(progressBar, { width: "100%", duration: 2, ease: "easeInOut" });
+
+  function countPercent() {
+    let newPercent = (loadingTl.progress() * 100).toFixed();
+    count.innerHTML = newPercent + "%";
+  }
+
+  function loadComplete() {
+    gsap.to(".preloader-section", {
+      y: "-100%",
+      delay: 0.5,
+    });
+  }
+
+  //   loadingTl
+  //     .to("#loading-bar", {
+  //       width: "20%",
+  //       duration: 5,
+  //     })
+  //     .to("#loading-bar", {
+  //       width: "60%",
+  //       duration: 3,
+  //       delay: 0.8,
+  //     })
+  //     .to("#loading-bar", {
+  //       width: "90%",
+  //       duration: 2,
+  //       delay: 0.5,
+  //     });
+
+  //   const counterTl = gsap.timeline();
+
+  //   counterTl
+  //     .to(count, {
+  //       val: 20,
+  //       duration: 5,
+  //       roundProps: "val",
+  //       onUpdate: function () {
+  //         document.getElementById("counter").innerHTML = count.val + "%";
+  //       },
+  //     })
+  //     .to(count, {
+  //       val: 60,
+  //       duration: 3,
+  //       delay: 0.8,
+  //       roundProps: "val",
+  //       onUpdate: function () {
+  //         document.getElementById("counter").innerHTML = count.val + "%";
+  //       },
+  //     })
+  //     .to(count, {
+  //       val: 90,
+  //       duration: 2,
+  //       delay: 0.5,
+  //       roundProps: "val",
+  //       onUpdate: function () {
+  //         document.getElementById("counter").innerHTML = count.val + "%";
+  //       },
+  //     });
+
+  //   imagesLoaded(document.querySelectorAll("img"), () => {
+  //     console.log("All Images Have been Loaded");
+  //     gsap.to("#loading-bar", {
+  //       width: "100%",
+  //       duration: 1,
+  //       delay: 0.2,
+  //     });
+
+  //     gsap.to(count, {
+  //       val: 100,
+  //       duration: 1,
+  //       delay: 0.2,
+  //       roundProps: "val",
+  //       onUpdate: function () {
+  //         document.getElementById("counter").innerHTML = count.val + "%";
+  //       },
+  //     });
+  //   });
 });
 </script>
 
@@ -129,6 +161,13 @@ section {
   margin: 5rem 0;
   position: absolute;
   bottom: 0;
+  span {
+    font-size: 2rem;
+  }
+
+  @media (max-width: $small) {
+    width: 50%;
+  }
 
   .loader {
     height: 1rem;
