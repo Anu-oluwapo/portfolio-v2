@@ -256,17 +256,24 @@ header {
       align-items: center;
 
       .nav-links {
+        a {
+          margin: 0 2rem;
+
+          &:hover {
+            transform: scale(150%);
+          }
+        }
         @media (max-width: $small) {
           display: none;
         }
       }
+
+      .nav-links,
+      .header-buttons {
+        margin: 0px 20px;
+      }
     }
   }
-}
-
-.nav-links,
-.header-buttons {
-  margin: 0px 20px;
 }
 
 .nav-links a {
@@ -279,11 +286,6 @@ header {
   color: $white;
   cursor: pointer;
   text-decoration: none;
-  margin: 0 2rem;
-
-  &:hover {
-    transform: scale(150%);
-  }
 }
 
 .btn {

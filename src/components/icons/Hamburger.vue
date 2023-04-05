@@ -1,9 +1,5 @@
 <template>
-  <div
-    @click="active = !active"
-    :class="[active && 'active']"
-    class="hamburger-icon"
-  >
+  <div :class="[active && 'active']" class="hamburger-icon">
     <div class="line-1"></div>
     <div class="line-2"></div>
     <div class="line-3"></div>
@@ -11,8 +7,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-let active = ref(false);
+const props = defineProps({
+  active: Boolean,
+});
 </script>
 
 <style lang="scss" scoped>

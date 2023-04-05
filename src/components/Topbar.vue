@@ -30,24 +30,47 @@
           <Switch />
         </div>
 
-        <div class="hamburger">
-          <Hamburger />
+        <div @click="toggleNav()" class="hamburger">
+          <Hamburger :active="mobileNavActive" />
         </div>
       </div>
     </div>
   </header>
+  <MobileNav @toggleActive="toggleNav()" :active="mobileNavActive" />
 </template>
 
 <script setup>
 import Switch from "./icons/Switch.vue";
 import Hamburger from "./icons/Hamburger.vue";
-import { onMounted } from "vue";
+import MobileNav from "./MobileNav.vue";
+import { onMounted, ref } from "vue";
 import { lenis } from "../helpers/animations";
+
+const mobileNavActive = ref(false);
 
 function toggleLight() {
   document.querySelector("body").classList.toggle("light");
 }
+
+function toggleNav() {
+  mobileNavActive.value = !mobileNavActive.value;
+  document.querySelector("header").classList.toggle("fixed");
+}
 onMounted(() => {});
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/assets/variables.scss";
+
+header.fixed {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background: $black;
+}
+.switch {
+  @media (max-width: $small) {
+    display: none;
+  }
+}
+</style>
