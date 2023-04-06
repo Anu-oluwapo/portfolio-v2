@@ -635,6 +635,12 @@ header {
     .project {
       border-bottom: 1px solid $neutral2;
       position: relative;
+
+      @media (max-width: $small) {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
       &:hover {
         .dot {
           transform: translate(0, 0);
@@ -663,6 +669,11 @@ header {
           img {
             transform: scale(100%);
           }
+
+          @media (max-width: $small) {
+            position: relative;
+            order: 1;
+          }
         }
       }
       .container {
@@ -672,6 +683,10 @@ header {
           align-items: center;
           position: relative;
           overflow: hidden;
+
+          @media (max-width: $small) {
+            order: 1;
+          }
         }
       }
 
