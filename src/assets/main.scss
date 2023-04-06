@@ -632,9 +632,37 @@ header {
   }
 
   .projects {
+    transition: all 0.3s ease;
+    .load-more {
+      @media (max-width: $small) {
+        display: flex;
+        align-items: center;
+        padding: 5% 5%;
+        border-bottom: 1px solid $neutral2;
+
+        p {
+          flex-grow: 1;
+        }
+
+        .bi-plus {
+          justify-self: flex-end;
+          color: white;
+        }
+      }
+      display: none;
+    }
     .project {
       border-bottom: 1px solid $neutral2;
       position: relative;
+      transition: all 0.3s ease;
+
+      @media (max-width: $small) {
+        display: flex;
+        padding: 3rem 0;
+        flex-direction: column-reverse;
+        // align-items: start;
+      }
+
       &:hover {
         .dot {
           transform: translate(0, 0);
@@ -651,6 +679,10 @@ header {
             transform: translate(0, 0);
             margin: 2.5rem 1rem;
             font-size: 1.3rem;
+
+            @media (max-width: $small) {
+              font-size: 1.8rem;
+            }
           }
         }
 
@@ -660,18 +692,33 @@ header {
           display: flex;
           align-items: center;
           justify-content: center;
+
+          @media (max-width: $small) {
+            height: inherit;
+          }
           img {
             transform: scale(100%);
           }
         }
       }
       .container {
+        @media (max-width: $small) {
+          align-items: start;
+          display: flex;
+          margin-left: 2rem;
+        }
         &:nth-child(1) {
           padding: 5rem 0 0 0;
           display: flex;
           align-items: center;
           position: relative;
           overflow: hidden;
+
+          @media (max-width: $small) {
+            order: 1;
+            padding: 0;
+            margin: 0 5%;
+          }
         }
       }
 
@@ -684,18 +731,40 @@ header {
         margin-right: 3rem;
         transform: translate(-3rem, 0%);
         transition: all 0.5s ease;
+
+        @media (max-width: $small) {
+          transform: translate(0, 0);
+          background-color: $white;
+          width: 12px;
+          height: 12px;
+          margin-right: 1.5rem;
+        }
       }
 
       h3 {
         display: inline;
         transform: translate(-2rem, 0%);
         transition: all 0.5s ease;
+
+        @media (max-width: $small) {
+          transform: translate(0, 0);
+          color: $white;
+          font-style: italic;
+        }
       }
 
       .skills {
         display: block;
         margin-left: 3rem;
         overflow: hidden;
+
+        @media (max-width: $small) {
+          overflow: visible;
+          margin-bottom: 2rem;
+          span {
+            font-size: 1.8rem;
+          }
+        }
 
         span {
           color: $white;
@@ -707,6 +776,11 @@ header {
           transform: translate(0, 125%);
           transition: all 0.5s ease;
           transition-delay: calc(0.05s * var(--i));
+
+          @media (max-width: $small) {
+            transform: translate(0, 0);
+            margin: 2.5rem 1rem;
+          }
         }
       }
 
@@ -717,10 +791,17 @@ header {
         position: absolute;
         top: 0;
         right: 0;
-        // background-image: url('images/zenpad.png');
-        // background-size: contain;
         transition: all 0.2s ease-in-out;
         overflow: hidden;
+
+        @media (max-width: $small) {
+          position: relative;
+          order: 1;
+          scale: 1;
+          width: auto;
+          height: 100%;
+          margin: 5% 5%;
+        }
         .cursor {
           position: absolute;
           border: 1px solid $white;
@@ -738,6 +819,10 @@ header {
           width: 100%;
           transform: scale(170%);
           transition: all 0.3s ease-in-out;
+
+          @media (max-width: $small) {
+            transform: scale(100%);
+          }
         }
       }
     }

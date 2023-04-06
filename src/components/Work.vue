@@ -59,7 +59,7 @@
               <span style="--i: 1">SCSS</span>
               <span style="--i: 3">VUE JS</span>
               <span style="--i: 4">GSAP</span>
-              <span style="--i: 5">LENIS</span>
+              <!-- <span style="--i: 5">LENIS</span> -->
             </div>
           </div>
           <div style="background-color: #131313" class="image">
@@ -71,7 +71,8 @@
             /></a>
           </div>
         </div>
-        <div class="project">
+
+        <div v-if="more" class="project">
           <div class="container">
             <div class="dot"></div>
             <h3>Sabali Health</h3>
@@ -93,7 +94,7 @@
             </a>
           </div>
         </div>
-        <div class="project">
+        <div v-if="more" class="project">
           <div class="container">
             <div class="dot"></div>
             <h3>Tranzaqt</h3>
@@ -114,6 +115,24 @@
             </a>
           </div>
         </div>
+
+        <div @click="toggleLoadMore()" class="load-more">
+          <p>SEE MORE</p>
+          <div class="plus">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="currentColor"
+              class="bi bi-plus"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -121,6 +140,24 @@
 
 <script setup>
 import SectionHeader from "./SectionHeader.vue";
+import { ref, onMounted } from "vue";
+import gsap from "gsap";
+
+let more = ref(false);
+
+function toggleLoadMore() {
+  more.value = !more.value;
+  more.value
+    ? (document.querySelector(".load-more p").innerHTML = "SEE LESS")
+    : (document.querySelector(".load-more p").innerHTML = "SEE MORE");
+
+  gsap.to(".projects", {
+    height: "auto",
+    duration: 2,
+  });
+}
+
+onMounted(() => {});
 </script>
 
 <style lang="scss" scoped></style>
