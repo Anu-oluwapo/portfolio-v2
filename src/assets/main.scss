@@ -681,7 +681,7 @@ header {
             font-size: 1.3rem;
 
             @media (max-width: $small) {
-              font-size: 1.8rem;
+              font-size: 1.2rem;
             }
           }
         }
@@ -750,6 +750,7 @@ header {
           transform: translate(0, 0);
           color: $white;
           font-style: italic;
+          font-size: 4.5rem;
         }
       }
 
@@ -760,9 +761,9 @@ header {
 
         @media (max-width: $small) {
           overflow: visible;
-          margin-bottom: 2rem;
+          // margin-bottom: 2rem;
           span {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
           }
         }
 

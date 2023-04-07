@@ -72,7 +72,7 @@
           </div>
         </div>
 
-        <div v-if="more" class="project">
+        <div v-show="more" class="project more">
           <div class="container">
             <div class="dot"></div>
             <h3>Sabali Health</h3>
@@ -94,7 +94,7 @@
             </a>
           </div>
         </div>
-        <div v-if="more" class="project">
+        <div v-show="more" class="project more">
           <div class="container">
             <div class="dot"></div>
             <h3>Tranzaqt</h3>
@@ -144,6 +144,17 @@ import { ref, onMounted } from "vue";
 import gsap from "gsap";
 
 let more = ref(false);
+
+const mediaQuery = window.matchMedia("(max-width: 800px)");
+function handleTabletChange(e) {
+  e.matches ? (more.value = false) : (more.value = true);
+}
+
+// Register event listener
+mediaQuery.addEventListener("change", handleTabletChange);
+
+// Initial check
+handleTabletChange(mediaQuery);
 
 function toggleLoadMore() {
   more.value = !more.value;
