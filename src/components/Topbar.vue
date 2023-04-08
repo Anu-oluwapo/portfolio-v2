@@ -67,6 +67,7 @@ header.fixed {
   z-index: 10;
   width: 100%;
   background: $black;
+  transition: all 0.5s ease;
 }
 .switch {
   @media (max-width: $small) {

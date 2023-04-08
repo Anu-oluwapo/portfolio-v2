@@ -39,6 +39,35 @@
 <script setup>
 import SectionHeader from "./SectionHeader.vue";
 import { lenis } from "../helpers/animations";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { onMounted } from "vue";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  // // const tl = gsap.timeline({});
+  // gsap.from(".about-section .image img", {
+  //   y: "50%",
+  //   opacity: 0,
+  //   duration: 0.5,
+  //   ease: "Power3.easeOut",
+  //   scrollTrigger: {
+  //     trigger: ".about-section .container",
+  //     start: "top+=500 bottom",
+  //     markers: true,
+  //   },
+  // });
+  // gsap.from(".about-section .text", {
+  //   y: "50%",
+  //   opacity: 0,
+  //   scrollTrigger: {
+  //     trigger: ".about-section .container",
+  //     start: "top+=500 bottom",
+  //     markers: true,
+  //   },
+  // });
+});
 </script>
 
 <style lang="scss" scoped></style>

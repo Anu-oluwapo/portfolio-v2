@@ -70,6 +70,32 @@ span {
     border-bottom: 1px solid $neutral;
   }
 
+  header.fixed {
+    background-color: $bg-light;
+  }
+
+  .mobile-nav-section {
+    background-color: $bg-light;
+
+    .mobile-nav {
+      .nav-links {
+        .nav-link {
+          border-bottom: 1px solid $neutral;
+        }
+      }
+
+      .footer {
+        border-top: 1px solid $neutral;
+      }
+    }
+  }
+
+  .hamburger-icon {
+    div {
+      background-color: $black;
+    }
+  }
+
   .section-header {
     border-bottom: 1px solid $neutral;
     border-top: 1px solid $neutral;

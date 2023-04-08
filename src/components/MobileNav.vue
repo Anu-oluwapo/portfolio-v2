@@ -50,33 +50,47 @@ function toggleLight() {
   document.querySelector("body").classList.toggle("light");
 }
 
-const mobileNavTl = gsap.timeline();
+const mobileNavTl = gsap.timeline({ paused: true });
 
 watch(props, () => {
   if (props.active) {
-    mobileNavTl.to(".mobile-nav-section", {
-      left: "0%",
-      opacity: 1,
-    });
+    mobileNavTl.play();
   } else {
-    mobileNavTl.to(".mobile-nav-section", {
-      left: "100%",
-      opacity: 0,
-    });
+    mobileNavTl.reverse();
   }
 });
 onMounted(() => {
-  mobileNavTl.set(".mobile-nav-section", {
-    left: "100%",
-    opacity: 0,
-  });
+  gsap.set(
+    ".mobile-nav-section",
+    {
+      left: "100%",
+    },
+    0
+  );
+  mobileNavTl
+    .to(".mobile-nav-section", {
+      left: "0%",
+    })
+    .from(".mobile-nav .controls .nav-links .nav-link", {
+      x: "70%",
+      opacity: 0,
+      stagger: { amount: 0.2 },
+    })
+    .from(
+      ".mobile-nav .footer",
+      {
+        y: "70%",
+        opacity: 0,
+      },
+      0.8
+    );
 });
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 section {
-  //   display: none;
+  transition: all 0.5s ease;
   position: fixed;
   height: 100vh;
   background: $black;
