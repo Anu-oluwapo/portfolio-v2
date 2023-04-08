@@ -3,6 +3,10 @@
     <SectionHeader :text="'ABOUT'" />
     <div class="container">
       <div class="image">
+        <p class="disclaimer">
+          **A COOL UNSPLASH <br />
+          PHOTOGRAPH NOT ME LOL
+        </p>
         <div class="image-border"></div>
         <img alt="Man Looking Up" src="/images/person.png" />
         <!-- <img alt="Man Looking Up" src="/images/person2.png" /> -->

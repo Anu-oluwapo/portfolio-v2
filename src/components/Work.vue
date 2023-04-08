@@ -3,7 +3,7 @@
     <SectionHeader :text="'WORK'" />
     <div class="">
       <div class="projects">
-        <div class="project">
+        <div @click="openTab('https://zenpad.netlify.app')" class="project">
           <div class="container">
             <div class="dot"></div>
             <h3>Zenpad DeFi</h3>
@@ -26,7 +26,10 @@
             <div class="cursor"><p>View Site</p></div>
           </div>
         </div>
-        <div class="project">
+        <div
+          @click="openTab('https://vr-classroom.netlify.app')"
+          class="project"
+        >
           <div class="container">
             <div class="dot"></div>
             <h3>VR Classroom</h3>
@@ -48,7 +51,7 @@
             </a>
           </div>
         </div>
-        <div class="project">
+        <div @click="openTab('https://anuoluwapo.xyz')" class="project">
           <div class="container">
             <div class="dot"></div>
             <h3>Portfolio ('23)</h3>
@@ -66,13 +69,17 @@
             <a
               name="project-portfolio"
               target="_blank"
-              href="https://anuoluwapo.netlify.app"
+              href="https://anuoluwapo.xyz"
               ><img alt="Project Portfolio" src="/images/portfolio.png"
             /></a>
           </div>
         </div>
 
-        <div v-show="more" class="project more">
+        <div
+          @click="openTab('https://sabalihealth.netlify.app')"
+          v-show="more"
+          class="project more"
+        >
           <div class="container">
             <div class="dot"></div>
             <h3>Sabali Health</h3>
@@ -94,7 +101,11 @@
             </a>
           </div>
         </div>
-        <div v-show="more" class="project more">
+        <div
+          @click="openTab('https://tranzaqt.netlify.app')"
+          v-show="more"
+          class="project more"
+        >
           <div class="container">
             <div class="dot"></div>
             <h3>Tranzaqt</h3>
@@ -155,6 +166,10 @@ mediaQuery.addEventListener("change", handleTabletChange);
 
 // Initial check
 handleTabletChange(mediaQuery);
+
+function openTab(link) {
+  window.open(`${link}`, "_blank");
+}
 
 function toggleLoadMore() {
   more.value = !more.value;

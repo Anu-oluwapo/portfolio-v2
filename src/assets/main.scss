@@ -130,6 +130,9 @@ span {
     }
 
     .image {
+      .disclaimer {
+        color: $neutral;
+      }
       img {
         filter: saturate(0%);
         background-color: $bg-light;
@@ -398,7 +401,7 @@ header {
     }
   }
 
-  padding: 15rem 0;
+  padding: 20rem 0; //15 rem before
   border-bottom: 1px solid $neutral2;
 
   @media (max-width: $small) {
@@ -571,6 +574,21 @@ header {
 
   .image {
     position: relative;
+    .disclaimer {
+      position: absolute;
+      display: inline;
+      font-size: 1.2rem;
+      font-style: italic;
+      z-index: 5;
+      top: 2rem;
+      left: -5rem;
+      color: $neutral2;
+      line-height: 1.68rem;
+
+      @media (max-width: $xSmall) {
+        left: -1rem;
+      }
+    }
   }
   .image-border {
     border: 1px solid $neutral2;
@@ -682,6 +700,7 @@ header {
       display: none;
     }
     .project {
+      cursor: pointer;
       border-bottom: 1px solid $neutral2;
       position: relative;
       transition: all 0.3s ease;
