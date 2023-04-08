@@ -14,11 +14,14 @@
       </div>
     </div>
   </section>
+  <section></section>
+  <section></section>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 import SectionHeader from "../components/SectionHeader.vue";
+import { loadComplete } from "../helpers/animations";
 import gsap from "gsap";
 import imagesLoaded from "imagesloaded";
 
@@ -62,13 +65,6 @@ onMounted(() => {
     let newPercent = (loadingTl.progress() * 100).toFixed();
     count.innerHTML = newPercent + "%";
   }
-
-  function loadComplete() {
-    gsap.to(".preloader-section", {
-      y: "-100%",
-      delay: 0.5,
-    });
-  }
 });
 </script>
 
@@ -81,6 +77,23 @@ section {
   position: fixed;
   top: 0;
   z-index: 3;
+
+  &:nth-child(2) {
+    background: $neutral;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+  &:nth-child(3) {
+    background: $neutral2;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
 }
 
 // .vertical {
