@@ -5,7 +5,7 @@
         <div class="socials">
           <ul>
             <li>
-              <a target="_blank" href="https://twitter.com/anu_ab_">Twitter</a>
+              <a target="_blank" href="https://twitter.com/anu_ab_">TWITTER</a>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -24,7 +24,7 @@
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/anuoluwapo-a-161299132/"
-                >Linkedin</a
+                >LINKEDIN</a
               >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@
             </li>
             <li>
               <a target="_blank" href="https://github.com/Anu-oluwapo"
-                >Github</a
+                >GITHUB</a
               >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

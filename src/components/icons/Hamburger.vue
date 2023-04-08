@@ -17,7 +17,7 @@ const props = defineProps({
 
 .hamburger-icon {
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   display: none;
 
   @media (max-width: $small) {
@@ -31,19 +31,19 @@ const props = defineProps({
     height: 0.2rem;
     width: 3rem;
     border-radius: 2rem;
-    transition: all 0.5s ease;
+    transition: all 0.5s ease-in-out;
   }
 
   &.active {
     div:nth-child(1) {
-      transform: rotate(-60deg) translateY(400%);
+      transform: rotate(-45deg) translateY(600%);
     }
     div:nth-child(2) {
       transform: translateX(50%);
       opacity: 0;
     }
     div:nth-child(3) {
-      transform: rotate(60deg) translateY(-400%);
+      transform: rotate(45deg) translateY(-600%);
     }
   }
 }
