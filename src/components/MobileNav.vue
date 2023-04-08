@@ -127,6 +127,7 @@ section {
       display: flex;
       padding: 3rem 5rem;
       border-top: 1px solid $neutral2;
+      align-items: center;
       //   align-self: end;
 
       p {

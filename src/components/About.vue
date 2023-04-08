@@ -27,7 +27,7 @@
         <button
           @click.prevent="lenis.scrollTo('#contact')"
           type="button"
-          class="btn"
+          class="btn btn_about"
         >
           <span>GET IN TOUCH</span>
         </button>
