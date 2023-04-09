@@ -70,6 +70,7 @@ span {
 
   header {
     border-bottom: 1px solid $neutral;
+    background-color: $bg-light;
   }
 
   header.fixed {
@@ -113,14 +114,17 @@ span {
   }
 
   .about-section {
+    .text {
+      z-index: auto;
+    }
     p {
-      filter: invert(0.4);
-      color: #131313;
+      filter: invert(0.8);
+      color: $black;
       mix-blend-mode: difference;
     }
 
     .btn {
-      filter: invert(0.3);
+      filter: invert(0.2);
       background: none;
     }
 
@@ -131,18 +135,29 @@ span {
 
     .image {
       .disclaimer {
-        color: $neutral;
+        filter: invert(0.8);
+        color: #000000;
+        mix-blend-mode: difference;
       }
       img {
-        filter: saturate(0%);
-        background-color: $bg-light;
+        // filter: saturate(0%);
+        // background-color: $bg-light;
+
+        &.light {
+          display: block;
+        }
+        &.dark {
+          display: none;
+        }
       }
     }
   }
 
   .work-section {
     .project {
-      border-top: 1px solid $neutral;
+      &:not(:nth-child(1)) {
+        border-top: 1px solid $neutral;
+      }
       &:hover {
         .dot {
           filter: invert(1);
@@ -275,6 +290,12 @@ b {
 header {
   padding: 2rem 0;
   border-bottom: 1px solid $neutral2;
+  transition: all 0.3s ease;
+  position: fixed;
+  width: 100%;
+  background-color: $black;
+  background-image: url("../../public/images/noise1.png");
+  z-index: 3;
 
   .header {
     display: flex;
@@ -302,6 +323,10 @@ header {
       .nav-links,
       .header-buttons {
         margin: 0px 20px;
+
+        @media (max-width: $small) {
+          display: none;
+        }
       }
     }
   }
@@ -384,6 +409,13 @@ header {
 }
 
 .hero-section {
+  height: 100vh;
+  display: flex;
+
+  @media (min-width: $xLarge) {
+    height: auto;
+    padding: 20rem 10rem;
+  }
   h2 {
     @media (max-width: $small) {
       line-height: 6.5rem;
@@ -391,8 +423,10 @@ header {
   }
   .container {
     display: flex;
-    align-items: end;
+    align-items: baseline;
     width: 100%;
+    align-self: end;
+    padding-top: 5rem;
   }
 
   br {
@@ -401,11 +435,12 @@ header {
     }
   }
 
-  padding: 20rem 0; //15 rem before
+  // padding: 20rem 0; //15 rem before
   border-bottom: 1px solid $neutral2;
 
   @media (max-width: $small) {
-    padding: 5rem 0rem;
+    height: auto;
+    padding: 15rem 0rem;
   }
 
   .text-content {
@@ -438,11 +473,11 @@ header {
 }
 
 .scroller {
-  // justify-self: end;
+  align-self: end;
   display: flex;
   justify-content: end;
-  position: relative;
-
+  bottom: 0;
+  height: auto;
   @media (max-width: 890px) {
     display: none;
   }
@@ -579,7 +614,7 @@ header {
       display: inline;
       font-size: 1.2rem;
       font-style: italic;
-      z-index: 5;
+      z-index: 2;
       top: 2rem;
       left: -5rem;
       color: $neutral2;
@@ -609,6 +644,13 @@ header {
   img {
     transition: all 0.3s ease;
     width: 62rem;
+
+    &.light {
+      display: none;
+    }
+    &.dark {
+      display: block;
+    }
     @media (max-width: $small) {
       margin-left: 0rem;
       margin-top: 0rem;
@@ -929,7 +971,7 @@ header {
 
   .section {
     border-bottom: 1px solid $neutral2;
-    padding-bottom: 10rem;
+    padding-bottom: 13rem;
   }
 
   .socials {
