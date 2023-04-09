@@ -25,6 +25,13 @@
             CONTACT</a
           >
         </div>
+        <div class="header-buttons">
+          <a target="_blank" href="/AnuoluwapoAbolarin.pdf">
+            <button type="button" class="btn btn_download">
+              <span>DOWNLOAD RESUME</span>
+            </button>
+          </a>
+        </div>
       </div>
 
       <div class="footer">
@@ -77,7 +84,7 @@ onMounted(() => {
       stagger: { amount: 0.2 },
     })
     .from(
-      ".mobile-nav .footer",
+      ".mobile-nav .footer, .header-buttons",
       {
         y: "70%",
         opacity: 0,
@@ -102,6 +109,10 @@ section {
     display: flex;
     flex-direction: column;
     height: 93%;
+
+    .header-buttons {
+      padding: 3rem 3rem;
+    }
     .controls {
       display: flex;
       //   height: 100%;

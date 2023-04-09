@@ -323,6 +323,10 @@ header {
       .nav-links,
       .header-buttons {
         margin: 0px 20px;
+
+        @media (max-width: $small) {
+          display: none;
+        }
       }
     }
   }
