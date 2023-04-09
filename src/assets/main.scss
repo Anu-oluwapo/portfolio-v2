@@ -416,6 +416,7 @@ header {
     height: auto;
     padding: 20rem 10rem;
   }
+
   h2 {
     @media (max-width: $small) {
       line-height: 6.5rem;
@@ -440,7 +441,7 @@ header {
 
   @media (max-width: $small) {
     height: auto;
-    padding: 15rem 0rem;
+    padding: 10rem 0rem;
   }
 
   .text-content {

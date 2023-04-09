@@ -32,7 +32,7 @@ import "../helpers/spotify";
 import getNowPlayingItem from "../helpers/spotify";
 import { onMounted, ref } from "vue";
 
-const playingSong = ref({});
+const playingSong = ref(false);
 function getPlayingSong() {
   getNowPlayingItem().then((result) => {
     playingSong.value = result;
