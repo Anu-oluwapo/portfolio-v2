@@ -8,8 +8,8 @@
           PHOTOGRAPH NOT ME LOL
         </p>
         <div class="image-border"></div>
-        <img alt="Man Looking Up" src="/images/person.png" />
-        <!-- <img alt="Man Looking Up" src="/images/person2.png" /> -->
+        <img class="light" alt="Man Looking Up" src="/images/person3.png" />
+        <img class="dark" alt="Man Looking Up" src="/images/person.png" />
       </div>
 
       <div class="text">

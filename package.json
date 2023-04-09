@@ -9,10 +9,13 @@
     "host": "vite --host"
   },
   "dependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@studio-freight/lenis": "^1.0.1",
+    "buffer": "^6.0.3",
     "gsap": "^3.11.4",
     "imagesloaded": "^5.0.0",
     "pinia": "^2.0.28",
+    "query-string": "^8.1.0",
     "sass": "^1.58.1",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"

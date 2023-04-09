@@ -2,7 +2,6 @@
   <main>
     <Preloader />
     <Topbar />
-
     <Hero />
     <About />
     <Work />
