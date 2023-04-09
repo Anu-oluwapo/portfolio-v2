@@ -84,7 +84,7 @@ onMounted(() => {
       stagger: { amount: 0.2 },
     })
     .from(
-      ".mobile-nav .footer, .header-buttons",
+      ".mobile-nav .footer, .mobile-nav .header-buttons",
       {
         y: "70%",
         opacity: 0,
