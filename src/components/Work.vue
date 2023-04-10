@@ -153,6 +153,9 @@
 import SectionHeader from "./SectionHeader.vue";
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+// import { start } from "repl";
+gsap.registerPlugin(ScrollTrigger);
 
 let more = ref(false);
 
@@ -183,7 +186,28 @@ function toggleLoadMore() {
   });
 }
 
-onMounted(() => {});
+onMounted(() => {
+  gsap.set(".projects .project", {
+    y: "50%",
+    zIndex: 1,
+    opacity: 0,
+  });
+  // const workTl = gsap.timeline({});
+
+  gsap.to(".projects .project", {
+    y: "0%",
+    stagger: {
+      amount: 1,
+    },
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".projects .project",
+      start: "top bottom-=100",
+      end: "bottom top+=300",
+      scrub: true,
+    },
+  });
+});
 </script>
 
 <style lang="scss" scoped></style>
