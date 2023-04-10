@@ -15,7 +15,7 @@
     >
       <g>
         <path
-          :fill="!playingSong ? '#ffffff33' : '#1CCC5B'"
+          :fill="!playingSong ? 'rgba(189, 189, 189, 0.87)' : '#1CCC5B'"
           d="M0 0h24v24H0z"
         />
         <path
@@ -59,27 +59,30 @@ onMounted(() => {
   justify-content: space-between;
   width: 20rem;
   position: fixed;
-  top: 90%;
+  top: 87%;
   left: -15rem;
   background: black;
   transition: all 0.5s ease;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  opacity: 0.2;
+  opacity: 0.5;
   z-index: 3;
 
   &.offline {
-    left: -8.5rem;
-    width: 12.5rem;
+    left: -10rem;
+    width: 14rem;
     padding: 0.5rem;
+    @media (max-width: $small) {
+      left: -9rem;
+    }
   }
   &:hover {
     left: 0;
-    opacity: 0.8;
+    opacity: 1;
   }
   p {
-    color: $neutral2;
+    color: rgba(189, 189, 189, 0.87);
     font-size: 1.3rem;
   }
 

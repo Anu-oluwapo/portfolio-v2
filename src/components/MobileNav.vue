@@ -88,6 +88,9 @@ onMounted(() => {
       {
         y: "70%",
         opacity: 0,
+        stagger: {
+          amount: 0.2,
+        },
       },
       0.8
     );
