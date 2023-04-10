@@ -346,7 +346,7 @@ header {
 
 .btn {
   font-style: normal;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
   align-items: center;
@@ -411,10 +411,11 @@ header {
 .hero-section {
   height: 100vh;
   display: flex;
+  align-items: baseline;
 
   @media (min-width: $xLarge) {
-    height: auto;
-    padding: 20rem 10rem;
+    height: 90rem;
+    // padding: 20rem 10rem;
   }
 
   h2 {
@@ -424,10 +425,11 @@ header {
   }
   .container {
     display: flex;
-    align-items: baseline;
+    align-items: end;
     width: 100%;
-    align-self: end;
+    height: 100%;
     padding-top: 5rem;
+    padding-bottom: 7%;
   }
 
   br {
@@ -439,13 +441,16 @@ header {
   // padding: 20rem 0; //15 rem before
   border-bottom: 1px solid $neutral2;
 
-  @media (max-width: $small) {
+  @media (max-width: $medium) {
     height: auto;
     padding: 10rem 0rem;
   }
 
   .text-content {
     flex-grow: 1;
+    // h2 {
+    //   font-size: 10rem;
+    // }
   }
   .images {
     margin: 0rem 0rem;
